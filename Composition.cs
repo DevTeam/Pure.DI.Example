@@ -1,9 +1,14 @@
-﻿using static Pure.DI.Lifetime;
+﻿using System.Diagnostics;
+using static Pure.DI.Lifetime;
+// ReSharper disable UnusedMember.Local
 
 namespace Pure.DI.Example;
 
 internal partial class Composition
 {
+    // [Conditional("DI")] attribute avoids generating IL code for the method that follows it.
+    // Since this method is needed only at the compile time.
+    [Conditional("DI")]
     private static void Setup() =>
         // In fact, this code is never run, and the method can have any name or be a constructor, for example,
         // and can be in any part of the compiled code because this is just a hint to set up an object graph.

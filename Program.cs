@@ -1,11 +1,7 @@
 // Entry point
 new Composition().Root.Run();
 
-internal partial class Program
+internal partial class Program(IBox<ICat> box)
 {
-    private readonly IBox<ICat> _box;
-
-    internal Program(IBox<ICat> box) => _box = box;
-
-    private void Run() => Console.WriteLine(_box);
+    private void Run() => Console.WriteLine(box);
 }

@@ -1,10 +1,8 @@
 namespace Pure.DI.Example;
 
-internal class CardboardBox<T> : IBox<T>
+internal class CardboardBox<T>(T content) : IBox<T>
 {
-    public CardboardBox(T content) => Content = content;
-
-    public T Content { get; }
+    public T Content { get; } = content;
 
     public override string ToString() => $"[{Content}]";
 }

@@ -1,7 +1,7 @@
 // ReSharper disable UnusedMember.Global
 namespace Pure.DI.Example;
 
-internal enum State
+public enum State
 {
     Alive,
     Dead

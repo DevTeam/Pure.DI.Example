@@ -1,4 +1,5 @@
-﻿namespace Pure.DI.Example;
+﻿#pragma warning disable CS8524 // The switch expression does not handle some values of its input type (it is not exhaustive) involving an unnamed enum value.
+namespace Pure.DI.Example;
 
 class ShroedingersCat(Lazy<State> superposition) : ICat
 {

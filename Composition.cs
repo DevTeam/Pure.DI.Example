@@ -11,25 +11,25 @@ partial class Composition
         // In fact, this code is never run, and the method can have any name or be a constructor, for example,
         // and can be in any part of the compiled code because this is just a hint to set up an object graph.
         DI.Setup(nameof(Composition))
-            .Bind<IInput, IOutput>().As(Singleton).To<ConsoleAdapter>()
+            .Bind().As(Singleton).To<ConsoleAdapter>()
             // Models a random subatomic event that may or may not occur
-            .Bind<Random>().As(Singleton).To<Random>()
+            .Bind().As(Singleton).To<Random>()
             // Represents a quantum superposition of 2 states: Alive or Dead
-            .Bind<State>().To(ctx =>
+            .Bind().To(ctx =>
             {
                 ctx.Inject<Random>(out var random);
                 return (State)random.Next(2);
             })
             // Represents schrodinger's cat
-            .Bind<ICat>().To<ShroedingersCat>()
+            .Bind().To<ShroedingersCat>()
             // Represents a cardboard box with any content
-            .Bind<IBox<TT>>().To<CardboardBox<TT>>()
+            .Bind().To<CardboardBox<TT>>()
             // Represents another box with whatever contents you want to keep
-            .Bind<IBox<TT>>("Black").To<BlackBox<TT>>()
+            .Bind("Black").To<BlackBox<TT>>()
             // Provides a box wrapper
-            .Bind<IBox<TT>>("Wrapper").To<BoxWrapper<TT>>()
+            .Bind("Wrapper").To<BoxWrapper<TT>>()
             // Provides a black box wrapper
-            .Bind<IBox<TT>>("Black Box Wrapper").To(ctx =>
+            .Bind("Black Box Wrapper").To(ctx =>
             {
                 ctx.Inject("Black", out IBox<TT> cat);
                 return new BoxWrapper<TT>(cat);

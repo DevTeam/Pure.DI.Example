@@ -1,6 +1,6 @@
 namespace Pure.DI.Example;
 
-class BlackBox<T>(T content) : IBox<T>
+internal class BlackBox<T>(T content) : IBox<T>
 {
     public T Content { get; } = content;
 

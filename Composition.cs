@@ -1,8 +1,8 @@
 ﻿using static Pure.DI.Lifetime;
-    
+
 namespace Pure.DI.Example;
 
-partial class Composition
+internal partial class Composition
 {
     // [Conditional("DI")] attribute avoids generating IL code for the method that follows it.
     // Since this method is needed only at the compile time.

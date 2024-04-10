@@ -4,11 +4,11 @@ using Pure.DI;
 
 new Composition().Root.Run();
 
-partial class Program(
+internal partial class Program(
     // Simple injections
     IInput input,
     IOutput output,
-    IBox<ICat> box,
+    IBox<ICat> boxWithCat,
     // Tagged injection
     [Tag("Wrapper")] IBox<ICat> wrapper,
     // Enumeration injection
@@ -28,7 +28,7 @@ partial class Program(
     private void Run()
     {
         output.WriteLine("#1");
-        output.WriteLine(box.ToString());
+        output.WriteLine(boxWithCat.ToString());
         output.WriteLine(wrapper.ToString());
         output.WriteLine();
         

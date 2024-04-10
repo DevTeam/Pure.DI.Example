@@ -1,6 +1,6 @@
 namespace Pure.DI.Example;
 
-interface IOutput
+internal interface IOutput
 {
     void WriteLine(string? line = default);
 }

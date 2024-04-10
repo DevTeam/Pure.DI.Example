@@ -2,7 +2,7 @@ using System.Text;
 
 namespace Pure.DI.Example;
 
-class ConsoleAdapter: IInput, IOutput
+internal class ConsoleAdapter: IInput, IOutput
 {
     public ConsoleAdapter() => Console.OutputEncoding = Encoding.UTF8;
 

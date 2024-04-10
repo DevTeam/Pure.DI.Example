@@ -1,6 +1,6 @@
 ﻿namespace Pure.DI.Example;
 
-interface IInput
+internal interface IInput
 {
     string? ReadLine();
 }

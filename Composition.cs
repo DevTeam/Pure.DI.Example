@@ -26,14 +26,8 @@ internal partial class Composition
             .Bind().To<CardboardBox<TT>>()
             // Represents another box with whatever contents you want to keep
             .Bind("Black").To<BlackBox<TT>>()
-            // Provides a box wrapper
-            .Bind("Wrapper").To<BoxWrapper<TT>>()
             // Provides a black box wrapper
-            .Bind("Black Box Wrapper").To(ctx =>
-            {
-                ctx.Inject("Black", out IBox<TT> cat);
-                return new BoxWrapper<TT>(cat);
-            })
+            .Bind("Wrapper").To<BoxWrapper<TT>>()
             // Composition Root (https://blog.ploeh.dk/2011/07/28/CompositionRoot/)
             .Root<Program>("Root");
 }

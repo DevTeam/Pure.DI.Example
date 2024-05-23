@@ -10,7 +10,7 @@ internal partial class Composition
     private static void Setup() =>
         // In fact, this code is never run, and the method can have any name or be a constructor, for example,
         // and can be in any part of the compiled code because this is just a hint to set up an object graph.
-        DI.Setup(nameof(Composition))
+        DI.Setup()
             .Bind().As(Singleton).To<ConsoleAdapter>()
             // Models a random subatomic event that may or may not occur
             .Bind().As(Singleton).To<Random>()

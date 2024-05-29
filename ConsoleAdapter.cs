@@ -8,5 +8,5 @@ internal class ConsoleAdapter: IInput, IOutput
 
     public string? ReadLine() => Console.ReadLine();
 
-    public void WriteLine(string? line) => Console.WriteLine(line);
+    public void WriteLine(object? line) => Console.WriteLine(line);
 }

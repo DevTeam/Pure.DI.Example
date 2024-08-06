@@ -9,14 +9,10 @@ internal partial class Composition
     private void Setup() =>
         DI.Setup()
             .Bind().As(Singleton).To<ConsoleAdapter>()
-            .Bind().To(ctx =>
-            {
-                ctx.Inject<Random>(out var random);
-                // Represents a quantum superposition of 2 states: Alive or Dead
-                return (State)random.Next(2);
-            })
+            // Represents a quantum superposition of 2 states: Alive or Dead
+            .Bind().To((Random random) => (State)random.Next(2))
             .Bind().To<ShroedingersCat>()
             .Bind().To<CardboardBox<TT>>()
             // Composition Root (https://blog.ploeh.dk/2011/07/28/CompositionRoot/)
-            .Root<Program>("Root");
+            .Root<Program>(nameof(Root));
 }

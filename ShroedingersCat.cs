@@ -7,7 +7,7 @@ internal class ShroedingersCat(Lazy<State> superposition) : ICat
     // at the time of observation via an irreversible process
     public State State => superposition.Value;
 
-    public override string ToString() => 
+    public override string ToString() =>
         State switch
         {
             State.Alive => "😺",

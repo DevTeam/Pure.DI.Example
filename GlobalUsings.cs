@@ -1,4 +1,3 @@
 ﻿global using Pure.DI.Example;
 global using System;
-global using System.Collections.Generic;
-global using System.Diagnostics;
+global using static Pure.DI.Lifetime;

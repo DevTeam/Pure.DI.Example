@@ -1,6 +1,4 @@
-﻿using static Pure.DI.Lifetime;
-
-namespace Pure.DI.Example;
+﻿namespace Pure.DI.Example;
 
 internal partial class Composition
 {
